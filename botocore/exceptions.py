@@ -14,7 +14,7 @@
 from botocore.vendored.requests.exceptions import ConnectionError
 
 
-class BotoCoreError(Exception):
+class BotoCoreError(StandardError):
     """
     The base exception class for BotoCore exceptions.
 
@@ -311,7 +311,7 @@ class UnsupportedSignatureVersionError(BotoCoreError):
     fmt = 'Signature version is not supported: {signature_version}'
 
 
-class ClientError(Exception):
+class ClientError(StandardError):
     MSG_TEMPLATE = (
         'An error occurred ({error_code}) when calling the {operation_name} '
         'operation: {error_message}')
